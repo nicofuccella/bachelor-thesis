@@ -1,0 +1,280 @@
+@INPROCEEDINGS{8973102,
+  author={Tymchuk, Yuriy and Ghafari, Mohammad and Nierstrasz, Oscar},
+  booktitle={2018 IEEE/ACM 26th International Conference on Program Comprehension (ICPC)}, 
+  title={JIT Feedback - What Experienced Developers Like about Static Analysis}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={64-6409},
+  doi={}
+}
+
+@article{10.5555/500399.500404,
+	author = {Smith, Larry},
+	title = {Shift-Left Testing},
+	year = {2001},
+	issue_date = {09/01/2001},
+	publisher = {CMP Media, Inc.},
+	address = {USA},
+	volume = {26},
+	number = {9},
+	issn = {1044-789X},
+	journal = {Dr. Dobb's J.},
+	month = {sep},
+	pages = {56–ff}
+}
+
+@book{beck2004extreme,
+  title={Extreme Programming Explained: Embrace Change},
+  author={Beck, K. and Andres, C. and Gamma, E.},
+  isbn={9780321278654},
+  lccn={2004057463},
+  series={XP series},
+  url={https://books.google.it/books?id=32RGBAAAQBAJ},
+  year={2004},
+  publisher={Addison-Wesley}
+}
+
+@misc{AbstractInterpretationNutshell,
+	author = {Cousot, Patrick},
+	title = {Abstract Interpretation in a Nutshell},
+	howpublished = "\url{https://www.di.ens.fr/~cousot/AI/IntroAbsInt.html}",
+	year = {2008}
+}
+
+@misc{ModelCheckingProcess,
+	author = {Franceschet, Massimo and Montanari, Angelo},
+	title = {An introduction to model checking (slightly revised by Angelo Montanari)},
+	howpublished = "\url{https://users.dimi.uniud.it/~angelo.montanari/MCclasses.pdf}",
+	year = {2019}
+}
+
+// TODO: Microsoft non penso vada bene
+@misc{LanguageServerProtocolWebsite,
+	author = {Microsoft},
+	title = "Language Server Protocol",
+	url = "https://microsoft.github.io/language-server-protocol",
+	year = {2021}
+}
+
+@article{10.1145/3410875,
+	author = {Bagnara, Roberto and Chiari, Michele and Gori, Roberta and Bagnara, Abramo},
+	title = {A Practical Approach to Verification of Floating-Point C/C++ Programs with Math.h/Cmath Functions},
+	year = {2021},
+	issue_date = {January 2021},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {30},
+	number = {1},
+	issn = {1049-331X},
+	url = {https://doi.org/10.1145/3410875},
+	doi = {10.1145/3410875},
+	abstract = {Verification of C/C<bold>++</bold> programs has seen considerable progress in several areas, but not for programs that use these languages' mathematical libraries. The reason is that all libraries in widespread use come with no guarantees about the computed results. This would seem to prevent any attempt at formal verification of programs that use them: without a specification for the functions, no conclusion can be drawn statically about the behavior of the program. We propose an alternative to surrender. We introduce a pragmatic approach that leverages the fact that most <monospace>math.h/cmath</monospace> functions are almost piecewise monotonic: as we discovered through exhaustive testing, they may have glitches, often of very small size and in small numbers. We develop interval refinement techniques for such functions based on a modified dichotomic search, which enable verification via symbolic execution based model checking, abstract interpretation, and test data generation. To the best of our knowledge, our refinement algorithms are the first in the literature to be able to handle non-correctly rounded function implementations, enabling verification in the presence of the most common implementations. We experimentally evaluate our approach on real-world code, showing its ability to detect or rule out anomalous behaviors.},
+	journal = {ACM Trans. Softw. Eng. Methodol.},
+	month = {dec},
+	articleno = {9},
+	numpages = {53},
+	keywords = {constraint propagation, abstract interpretation, Floating-point numbers, symbolic execution, program verification, model checking}
+}
+
+@misc{TheAppleGotoFailVulnerability,
+	author = {Wheeler, David A.},
+	title = "The Apple goto fail vulnerability: lessons learned",
+	url = "https://dwheeler.com/essays/apple-goto-fail.html",
+	year = {2021}
+}
+
+@InProceedings{BagnaraBH18,
+  Author = "R. Bagnara and A. Bagnara and P. M. Hill",
+  Title = "The {MISRA C} Coding Standard and its Role in the Development
+           and Analysis of Safety- and Security-Critical Embedded Software",
+  Booktitle = "Static Analysis: Proceedings
+               of the 25th International Symposium (SAS 2018)",
+  Editor = "A. Podelski",
+  Address = "Freiburg, Germany",
+  Year = 2018,
+  Series = "Lecture Notes in Computer Science",
+  Volume = 11002,
+  Publisher = "Springer International Publishing",
+  Pages = "5--23",
+  Abstract = "The MISRA project started in 1990 with the mission of
+              providing world-leading best practice guidelines for the
+              safe and secure application of both embedded control
+              systems and standalone software. MISRA C is a coding
+              standard defining a subset of the C language, initially
+              targeted at the automotive sector, but now adopted
+              across all industry sectors that develop C software in
+              safety- and/or security-critical contexts. In this
+              paper, we introduce MISRA C, its role in the development
+              of critical software, especially in embedded systems,
+              its relevance to industry safety standards, as well as
+              the challenges of working with a general-purpose
+              programming language standard that is written in natural
+              language with a slow evolution over the last 40+
+              years. We also outline the role of static analysis in
+              the automatic checking of compliance with respect to
+              MISRA C, and the role of the MISRA C language subset in
+              enabling a wider application of formal methods to
+              industrial software written in C.",
+  ISBN = "978-3-319-99725-4"
+}
+
+@InProceedings{BagnaraBH19,
+  Author = "R. Bagnara and A. Bagnara and P. M. Hill",
+  Title = "The {MISRA C} Coding Standard: A Key Enabler for the Development
+           of Safety- and Security-Critical Embedded Software",
+  Booktitle = "embedded world Conference 2019 --- Proceedings",
+  Address = "Nuremberg, Germany",
+  Year = 2019,
+  Editor = "DESIGN\&ELEKTRONIK",
+  Publisher = "WEKA FACHMEDIEN, Richard-Reitzner-Allee 2, 85540 Haar, Germany",
+  Pages = "543--553",
+  Abstract = "Building embedded control systems that embody industry
+              best practices for safety and security is a challenging
+              task: doing so in unrestricted C is even more
+              challenging.  C~is a general-purpose programming
+              language, partially defined by an ISO standard written
+              in natural language with a slow evolution over the last
+              40+ years.  Its many strong points make it the most used
+              language for the development of embedded systems.
+              Unfortunately, the origin of C's strength is also the
+              origin of C's weakness: the language has many aspects
+              that are not fully defined, it has some rather obscure
+              aspects that can easily induce programmers into error,
+              and it has no run-time error detection facilities.
+              MISRA C is a coding standard defining a subset of the C
+              language, initially targeted at the automotive sector,
+              but now adopted across all industry sectors that develop
+              C software in safety- and/or security-critical contexts.
+              In this talk, we introduce MISRA C, its key role in the
+              development of critical embedded systems' software and
+              its relevance to industry safety and security standards.
+              We explain why and how MISRA C retains 95\% of the
+              advantages of C and eradicates 95\% of its drawbacks:
+              with the right tools, training and professional
+              expertise, the adoption of MISRA C, besides satisfying
+              some important requirements imposed by safety standards,
+              can significantly decrease development times and
+              costs.",
+  ISBN = "978-3-645-50182-8"
+}
+
+@InProceedings{BagnaraBH21,
+  Author = "R. Bagnara and M. Barr and P. M. Hill",
+  Title = "{BARR-C:2018} and {MISRA C:2012} (with {Amendment~2}):
+           Synergy Between the Two Most Widely Used {C} Coding Standards",
+  Booktitle = "embedded world Conference 2021 DIGITAL --- Proceedings",
+  Pages = "378--391",
+  Address = "Nuremberg, Germany",
+  Year = 2021,
+  Editor = "DESIGN\&ELEKTRONIK",
+  Publisher = "WEKA FACHMEDIEN, Richard-Reitzner-Allee 2, 85540 Haar, Germany",
+  Abstract = "The \emph{Barr Group's Embedded~C Coding Standard}
+              (BARR-C:2018, which originates from the 2009 Netrino's
+              Embedded~C Coding Standard) is, for coding standards
+              used by the embedded system industry, second only in
+              popularity to MISRA~C.  However, the choice between
+              MISRA~C:2012 and BARR-C:2018 needs not be a hard
+              decision since they are complementary in two quite
+              different ways.  On the one hand, BARR-C:2018 has
+              removed all the incompatibilities with respect to
+              MISRA~C:2012 that were present in the previous edition
+              (BARR-C:2013). As a result, disregarding programming
+              style, BARR-C:2018 defines a subset of C that, while
+              preventing a significant number of programming errors,
+              is larger than the one defined by MISRA C:2012. On the
+              other hand, concerning programming style, whereas MISRA
+              C leaves this to individual organizations, BARR-C:2018
+              defines a programming style aimed primarily at
+              minimizing programming errors.  As a result, BARR-C:2018
+              can be seen as a first, dramatically useful step to C
+              language subsetting that is suitable for all kinds of
+              projects; critical projects can then evolve toward
+              MISRA~C:2012 compliance smoothly while maintaining the
+              BARR-C programming style.  In this paper, we introduce
+              BARR-C:2018, we describe its relationship with
+              MISRA~C:2012, and we discuss the parallel and serial
+              adoption of the two coding standards.",
+  ISBN = "978-3-645-50189-7"
+}
+
+﻿@Article{BagnaraBBCG22,
+  Author = "R. Bagnara and A. Bagnara and F. Biselli
+            and M. Chiari and R. Gori",
+  Title = "Correct Approximation of {IEEE~754} Floating-Point Arithmetic
+           for Program Verification",
+  Journal = "Constraints",
+  Year = 2022,
+  Month = feb,
+  Abstract = "Verification of programs using floating-point arithmetic
+              is challenging on several accounts. One of the
+              difficulties of reasoning about such programs is due to
+              the peculiarities of floating-point arithmetic: rounding
+              errors, infinities, non-numeric objects (NaNs), signed
+              zeroes, denormal numbers, different rounding modes,
+              etc. One possibility to reason about floating-point
+              arithmetic is to model a program computation path by
+              means of a set of ternary constraints of the form and
+              use constraint propagation techniques to infer new
+              information on the variables' possible values. In this
+              setting, we define and prove the correctness of
+              algorithms to precisely bound the value of one of the
+              variables x, y or z, starting from the bounds known for
+              the other two. We do this for each of the operations and
+              for each rounding mode defined by the IEEE 754 binary
+              floating-point standard, even in the case the rounding
+              mode in effect is only partially known. This is the
+              first time that such so-called filtering algorithms are
+              defined and their correctness is formally proved. This
+              is an important slab for paving the way to formal
+              verification of programs that use floating-point
+              arithmetics.",
+  ISSN = "1572-9354",
+  DOI = "10.1007/s10601-021-09322-9",
+  URL = "https://doi.org/10.1007/s10601-021-09322-9"
+}
+
+@Article{BagnaraCGB20,
+  Author = "R. Bagnara and M. Chiari and R. Gori and A. Bagnara",
+  Title = "A Practical Approach to Verification of Floating-Point {C/C++} Programs with \texttt{math.h}/\texttt{cmath} Functions",
+  Year = 2020,
+  Publisher = "Association for Computing Machinery",
+  Address = "New York, NY, USA",
+  Volume = 30,
+  Number = 1,
+  ISSN = "1049-331X",
+  URL = "https://doi.org/10.1145/3410875",
+  DOI = "10.1145/3410875",
+  Journal = "ACM Transactions on Software Engineering and Methodology",
+  Articleno = 9,
+  Numpages = 53
+}
+
+@Inproceedings{BagnaraBH22,
+  Author    = "R. Bagnara and A. Bagnara and P. M. Hill",
+  Title     = "A Rationale-Based Classification of {MISRA~C} Guidelines",
+  Booktitle = "embedded world Conference 2022 --- Proceedings",
+  Pages = "440--451",
+  Address = "Nuremberg, Germany",
+  Year = 2022,
+  Editor = "DESIGN\&ELEKTRONIK",
+  Publisher = "WEKA FACHMEDIEN, Richard-Reitzner-Allee 2, 85540 Haar, Germany",
+  Abstract = "MISRA~C is the most authoritative language subset for
+             the C programming language that is a de facto standard in
+             several industry sectors where safety and security are of
+             paramount importance.  While MISRA~C is currently encoded
+             in 175 guidelines (coding rules and directives), it does
+             not coincide with them: proper adoption of MISRA~C
+             requires embracing its preventive approach (as opposed to
+             the ``bug finding'' approach) and a documented
+             development process where justifiable non-compliances are
+             authorized and recorded as \emph{deviations}.  MISRA~C
+             guidelines are classified along several axes in the
+             official MISRA documents.  In this paper, we add to these
+             an orthogonal classification that associates guidelines
+             with their main rationale.  The advantages of this new
+             classification are illustrated for different kinds of
+             projects, including those not (yet) having MISRA
+             compliance among their objectives.",
+  ISBN = "978-3-645-50194-1"
+}

@@ -1,0 +1,23 @@
+\begin{lstlisting}[firstnumber=27]
+void latlong_utm_of(float phi, float lambda, uint8_t utm_zone) {
+  float lambda_c = LambdaOfUtmZone(utm_zone);
+  float ll = isometric_latitude(phi, E);
+  float dl = lambda - lambda_c;
+  float phi_ = asin(sin(dl) / cosh(ll));
+  float ll_ = isometric_latitude0(phi_);
+  float lambda_ = atan(sinh(ll) / cos(dl));
+  struct complex z_ = { lambda_, ll_ };
+  CScal(serie_coeff_proj_mercator[0], z_);
+  uint8_t k;
+  for(k = 1; k < 3; k++) {
+    struct complex z = { lambda_, ll_ };
+    CScal(2*k, z);
+    CSin(z);
+    CScal(serie_coeff_proj_mercator[k], z);
+    CAdd(z, z_);
+  }
+  CScal(N, z_);
+  latlong_utm_x = XS + z_.im;
+  latlong_utm_y = z_.re;
+}
+\end{lstlisting}

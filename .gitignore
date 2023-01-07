@@ -1,0 +1,12 @@
+.idea/
+**/*.log
+**/*.toc
+**/*.aux
+**/*.bbl
+**/*.lot
+**/*.lof
+**/*.out
+**/*.xmpi
+**/*.dvi
+**/*.loa
+**/*.blg

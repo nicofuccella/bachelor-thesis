@@ -1,0 +1,252 @@
+\newcommand{\Break}{\State \textbf{break}}
+
+\newcolumntype{L}{>{\quad$}l<{$\quad}}
+\newcolumntype{C}{>{\quad$}c<{$\quad}}
+
+
+%% Abbreviation of "unsatisfiable", for use in the tables.
+\newcommand*{\uns}{\text{unsat.}}
+
+%% Declarators for functions and relations.
+\newcommand*{\reld}[3]{\mathord{#1}\subseteq#2\times#3}
+\newcommand*{\fund}[3]{\mathord{#1}\colon#2\to#3}
+\newcommand*{\pard}[3]{\mathord{#1}\colon#2\rightarrowtail#3}
+
+%% Special letters denoting sets and algebras
+\providecommand*{\Iset}{\mathbb{I}}            % An unspecified set.
+\providecommand*{\Nset}{\mathbb{N}}            % Naturals
+\providecommand*{\Zset}{\mathbb{Z}}            % Integers
+\providecommand*{\Qset}{\mathbb{Q}}            % Rationals
+\providecommand*{\Rset}{\mathbb{R}}            % Reals
+\providecommand*{\Fset}{\mathbb{F}}            % Floating point numbers
+
+%% Calligraphic alphabet
+\newcommand*{\cA}{\ensuremath{\mathcal{A}}}
+\newcommand*{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand*{\cC}{\ensuremath{\mathcal{C}}}
+\newcommand*{\cD}{\ensuremath{\mathcal{D}}}
+\newcommand*{\cE}{\ensuremath{\mathcal{E}}}
+\newcommand*{\cF}{\ensuremath{\mathcal{F}}}
+\newcommand*{\cG}{\ensuremath{\mathcal{G}}}
+\newcommand*{\cH}{\ensuremath{\mathcal{H}}}
+\newcommand*{\cI}{\ensuremath{\mathcal{I}}}
+\newcommand*{\cJ}{\ensuremath{\mathcal{J}}}
+\newcommand*{\cK}{\ensuremath{\mathcal{K}}}
+\newcommand*{\cL}{\ensuremath{\mathcal{L}}}
+\newcommand*{\cM}{\ensuremath{\mathcal{M}}}
+\newcommand*{\cN}{\ensuremath{\mathcal{N}}}
+\newcommand*{\cO}{\ensuremath{\mathcal{O}}}
+\newcommand*{\cP}{\ensuremath{\mathcal{P}}}
+\newcommand*{\cQ}{\ensuremath{\mathcal{Q}}}
+\newcommand*{\cR}{\ensuremath{\mathcal{R}}}
+\newcommand*{\cS}{\ensuremath{\mathcal{S}}}
+\newcommand*{\cT}{\ensuremath{\mathcal{T}}}
+\newcommand*{\cU}{\ensuremath{\mathcal{U}}}
+\newcommand*{\cV}{\ensuremath{\mathcal{V}}}
+\newcommand*{\cW}{\ensuremath{\mathcal{W}}}
+\newcommand*{\cX}{\ensuremath{\mathcal{X}}}
+\newcommand*{\cY}{\ensuremath{\mathcal{Y}}}
+\newcommand*{\cZ}{\ensuremath{\mathcal{Z}}}
+
+%% Cardinality of an interval.
+\newcommand*{\card}{\mathop{\#}\nolimits}
+
+%% Not A Number.
+\newcommand*{\nan}{\ensuremath{\mathrm{nan}}}
+
+%% Floating-point predecessor and successor.
+\newcommand*{\fpred}[1]{{#1}^{\mathord{-}}}
+\newcommand*{\fpredp}[2]{{#1}_{#2}^{\mathord{-}}}
+\newcommand*{\fpredn}[2]{{#1}^{\mathord{-}^{#2}}}
+\newcommand*{\fpredpn}[3]{{#1}_{#2}^{\mathord{-}^{#3}}}
+\newcommand*{\fsucc}[1]{{#1}^{\mathord{+}}}
+\newcommand*{\fsuccp}[2]{{#1}_{#2}^{\mathord{+}}}
+\newcommand*{\fsuccn}[2]{{#1}^{\mathord{+}^{#2}}}
+\newcommand*{\fsuccpn}[3]{{#1}_{#2}^{\mathord{+}^{#3}}}
+
+%% rexp
+\newcommand*{\rexp}{\mathop{\mathrm{rexp}}\nolimits}
+
+%% Floating-point distance to predecessor and successor.
+\newcommand*{\fpt}{\mathop{\Delta_\downarrow}\nolimits}
+\newcommand*{\fst}{\mathop{\Delta_\uparrow}\nolimits}
+
+%% ULP Function
+\newcommand*{\ulp}{\operatorname{ulp}}
+
+%% Floating-point error measures.
+\newcommand*{\ferrdown}{\mathop{\nabla_\downarrow}\nolimits}
+\newcommand*{\ferrup}{\mathop{\nabla_\uparrow}\nolimits}
+\newcommand*{\ferrzero}{\mathop{\nabla_\rzero}\nolimits}
+\newcommand*{\ferrnear}{\mathop{\nabla_\rnear}\nolimits}
+\newcommand*{\ferraway}{\mathop{\nabla_\raway}\nolimits}
+\newcommand*{\ferr}{\mathop{\nabla}\nolimits}
+\newcommand*{\ftwiceerrnearneg}{\mathop{\nabla_2^{\mathrm{n}-}}\nolimits}
+\newcommand*{\ftwiceerrnearpos}{\mathop{\nabla_2^{\mathrm{n}+}}\nolimits}
+
+%% Sign function.
+\newcommand*{\sgn}{\mathop{\mathrm{sgn}}\nolimits}
+
+%% Floating-point constraints.
+\newcommand*{\fbop}{\mathrm{fbop}}
+\newcommand*{\fadd}{\mathrm{fadd}}
+\newcommand*{\fsub}{\mathrm{fsub}}
+\newcommand*{\fmul}{\mathrm{fmul}}
+\newcommand*{\fdiv}{\mathrm{fdiv}}
+\newcommand*{\fmod}{\mathrm{fmod}}
+\newcommand*{\ntof}{\mathrm{rtof}}
+\newcommand*{\itof}{\mathrm{itof}}
+\newcommand*{\ftof}{\mathrm{ftof}}
+\newcommand*{\ftoi}{\mathrm{ftoi}}
+
+%% Rounding modes.
+\newcommand*{\rup}{{\mathord{\uparrow}}}
+\newcommand*{\rdown}{{\mathord{\downarrow}}}
+\newcommand*{\rzero}{{0}}
+\newcommand*{\rnear}{{\mathrm{n}}}
+\newcommand*{\raway}{{\mathrm{a}}}
+
+%% Rounding functions.
+\newcommand*{\round}[2]{[#2]_{#1}}
+\newcommand*{\roundup}[1]{\round{\rup}{#1}}
+\newcommand*{\rounddown}[1]{\round{\rdown}{#1}}
+\newcommand*{\roundzero}[1]{\round{\rzero}{#1}}
+\newcommand*{\roundnear}[1]{\round{\rnear}{#1}}
+\newcommand*{\roundaway}[1]{\round{\raway}{#1}}
+\newcommand*{\biground}[2]{\bigl[#2\bigr]_{#1}}
+\newcommand*{\bigroundup}[1]{\biground{\rup}{#1}}
+\newcommand*{\bigrounddown}[1]{\biground{\rdown}{#1}}
+\newcommand*{\bigroundzero}[1]{\biground{\rzero}{#1}}
+\newcommand*{\bigroundnear}[1]{\biground{\rnear}{#1}}
+\newcommand*{\bigroundaway}[1]{\biground{\raway}{#1}}
+\newcommand*{\around}[2]{\left[#2\right]_{#1}}
+\newcommand*{\aroundup}[1]{\around{\rup}{#1}}
+\newcommand*{\arounddown}[1]{\around{\rdown}{#1}}
+\newcommand*{\aroundzero}[1]{\around{\rzero}{#1}}
+\newcommand*{\aroundnear}[1]{\around{\rnear}{#1}}
+\newcommand*{\aroundaway}[1]{\around{\raway}{#1}}
+
+%% IEEE 754 constants.
+\newcommand*{\fmin}{{f_\mathrm{min}}}
+\newcommand*{\fmax}{{f_\mathrm{max}}}
+\newcommand*{\fnormin}{{f^\mathrm{nor}_\mathrm{min}}}
+\newcommand*{\emin}{{e_\mathrm{min}}}
+\newcommand*{\emax}{{e_\mathrm{max}}}
+
+%% Trigonometric stuff
+\newcommand*{\lmax}{\ell_{\mathrm{max}}}
+\newcommand*{\ngM}{n_{\mathrm{gM}}}
+
+%% Symbolic order.
+\newcommand*{\slt}{\prec}
+\newcommand*{\sltm}[1]{\mathrel{\prec^{#1}}}
+\newcommand*{\slem}[1]{\mathrel{\preccurlyeq^{#1}}}
+\newcommand*{\sgt}{\succ}
+\newcommand*{\sgtm}[1]{\mathrel{\succ^{#1}}}
+\newcommand*{\sgem}[1]{\mathrel{\succcurlyeq^{#1}}}
+\newcommand*{\sleq}{\preccurlyeq}
+\newcommand*{\sgeq}{\succcurlyeq}
+
+%% Evaluation functions.
+\newcommand*{\eval}[2]{\llbracket #2 \rrbracket_{#1}}
+\newcommand*{\evalup}[1]{\eval{\rup}{#1}}
+\newcommand*{\evaldown}[1]{\eval{\rdown}{#1}}
+\newcommand*{\evalzero}[1]{\eval{\rzero}{#1}}
+\newcommand*{\evalnear}[1]{\eval{\rnear}{#1}}
+\newcommand*{\bigeval}[2]{\bigl\llbracket #2 \bigr\rrbracket_{#1}}
+\newcommand*{\bigevalup}[1]{\bigeval{\rup}{#1}}
+\newcommand*{\bigevaldown}[1]{\bigeval{\rdown}{#1}}
+\newcommand*{\bigevalzero}[1]{\bigeval{\rzero}{#1}}
+\newcommand*{\bigevalnear}[1]{\bigeval{\rnear}{#1}}
+
+
+%% Floating-point machine operations.
+\newcommand{\mop}{\boxcircle}
+\newcommand{\madd}{\boxplus}
+\newcommand{\msub}{\boxminus}
+\newcommand{\mmul}{\boxdot}
+\newcommand{\mdiv}{\boxslash}
+
+%% Things that hold by definition
+\newcommand{\defrel}[1]{\mathrel{\buildrel \mathrm{def} \over {#1}}}
+%\newcommand{\defeq}{\defrel{=}}
+\newcommand{\defeq}{\mathrel{\mathord{:}\mathord{=}}}
+\newcommand{\defiff}{\defrel{\Longleftrightarrow}}
+%\newcommand{\defeq}{=}
+%\newcommand{\defiff}{\Longleftrightarrow}
+
+%% Algorithms.
+\newcommand*{\takes}{\mathrel{\mathord{:}\mathord{=}}}
+\newcommand*{\splitpoint}{\mathtt{split\_point}}
+\newcommand*{\bisectlb}{\mathtt{bisect\_lb}}
+\newcommand*{\bisectub}{\mathtt{bisect\_ub}}
+\newcommand*{\findhilb}{\mathtt{findhi\_lb}}
+\newcommand*{\findhiub}{\mathtt{findhi\_ub}}
+\newcommand*{\galloplb}{\mathtt{gallop\_lb}}
+\newcommand*{\gallopub}{\mathtt{gallop\_ub}}
+\newcommand*{\init}{\mathtt{init}}
+\newcommand*{\linsearchgeq}{\mathtt{linsearch\_geq}}
+\newcommand*{\linsearchleq}{\mathtt{linsearch\_leq}}
+\newcommand*{\findfmax}{\mathtt{findfmax}}
+\newcommand*{\logsearchlb}{\mathtt{logsearch\_lb}}
+\newcommand*{\logsearchub}{\mathtt{logsearch\_ub}}
+\newcommand*{\lowerbound}{\mathtt{lower\_bound}}
+\newcommand*{\upperbound}{\mathtt{upper\_bound}}
+\newcommand*{\checkglitch}{\mathtt{check\_glitch}}
+
+%% Trigonometric algorithms.
+\newcommand*{\boundstrig}{\mathtt{compute\_bounds\_trig}}
+\newcommand*{\branchlower}{\mathtt{branch\_lb}}
+\newcommand*{\branchupper}{\mathtt{branch\_ub}}
+\newcommand*{\geqtonchange}{\mathtt{geq\_tonicity\_change}}
+\newcommand*{\vadd}{\mathtt{add}}
+\newcommand*{\even}{\operatorname{even}}
+\newcommand*{\tonchange}{\operatorname{tonicity\_change}}
+\newcommand*{\quasimono}{\operatorname{quasi\_isotonic}}
+\newcommand*{\quasianti}{\operatorname{quasi\_antitonic}}
+
+%% Summaries for theorem-like environments.
+\newcommand{\summary}[1]{\textrm{\textbf{\textup{#1}}}}
+
+%\newcommand*{\coanote}[1]{\footnote{\textbf{For co-authors:} {#1}}}
+\newcommand*{\coanote}[1]{}
+
+%% C++
+\newcommand*{\Cplusplus}{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+
+%% Set theory.
+\renewcommand{\emptyset}{\varnothing}
+
+%\newcommand*{\wpc}{\mathop{\wp_\mathrm{c}}\nolimits}
+%\newcommand*{\wpf}{\mathop{\wp_\mathrm{f}}\nolimits}
+%\newcommand*{\wpn}{\mathop{\wp_\rnear}\nolimits}
+
+\newcommand*{\sseq}{\subseteq}
+\newcommand*{\sseqf}{\mathrel{\subseteq_\mathrm{f}}}
+\newcommand*{\sslt}{\subset}
+\newcommand*{\Sseq}{\supseteq}
+\newcommand*{\Ssgt}{\supset}
+
+%\newcommand{\Nsseq}{\nsubseteq}
+
+\newcommand*{\union}{\cup}
+\newcommand*{\bigunion}{\bigcup}
+%\newcommand*{\biginters}{\bigcap}
+\newcommand*{\inters}{\cap}
+\newcommand*{\setdiff}{\setminus}
+
+\newcommand{\sset}[2]{{\renewcommand{\arraystretch}{1.2}
+                      \left\{\,#1 \,\left|\,
+                               \begin{array}{@{}l@{}}#2\end{array}
+                      \right.   \,\right\}}}
+
+%% Logical quantifiers stuff.
+\newcommand{\st}{\mathrel{.}}
+\newcommand{\itc}{\mathrel{:}}
+
+%% Glitches.
+\newcommand{\gwidth}{\mathop\mathrm{width}\nolimits}
+\newcommand{\gdepth}{\mathop\mathrm{depth}\nolimits}
+
+%% Variable intervals
+\newcommand*{\var}[1]{\mathbf{#1}}

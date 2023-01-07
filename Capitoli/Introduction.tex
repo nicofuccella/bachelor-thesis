@@ -1,0 +1,25 @@
+\chapter*{Introduction} %Se si cambia il Titolo cambiare anche la riga successiva così che appia corretto nell'indice
+\addcontentsline{toc}{chapter}{Introduction} %Per far apparire Introduzione nell'indice (Il nome deve rispecchiare quello del chapter)
+\pagenumbering{arabic} % Settaggio numerazione normale
+Nowadays static analysis is more and more common in every development scenario. In some cases, especially safety-critical ones, it is even enforced by regulation and industry standards. Although it can improve code quality dramatically, developers are often reluctant to implement it. This is mainly due to the fact that most of these tools are designed to run separately from development environments: they return extensive lists of notifications which must be inspected one by one in a time-consuming fashion. 
+Analyzers manufacturers know the situation and tried different approaches: it is now common for them to build on top of their existing tools integrations with IDEs and CI (Continuous Integration) pipelines.
+The core of the analyzer and its code remains pretty much the same, what changes is the interface that the end users can rely on.
+This thesis focused on the integration possibilities between the IDE and the analyzer, in order to assist the user during the coding.
+This can be achieved in different ways: from a simple button in the IDE that triggers the analysis to more integrated experiences.
+\\\\
+In a publication by Yuriy Tymchuk, Mohammad Ghafari and Oscar Nierstrasz in occasion of the 2018 IEEE/ACM 26th International Conference we can read:
+\begin{quote}
+\itshape
+``We learned that the availability of our tool as a default IDE feature and its automatic execution are the main reasons for its adoption. Moreover, the fact that immediate feedback is provided directly in the related development context is essential to keeping developers satisfied, although in certain cases feedback delivered later was deemed more useful.'' \cite{8973102}
+\end{quote}
+
+This confirmed our hunch, and we wanted to try to build an IDE extension on top of an existing analyzer, ECLAIR by BUGSENG\footnote{https://www.bugseng.com/eclair}, to better understand the challenges and the state of the art of this kind of integration.
+BUGSENG had already explored integrations with CI pipelines and the analyzer was already capable of exporting reports in different formats: given this background we could fully concentrate on the IDE side.
+After a brief analysis of other tools and developer feedback, we outlined the experience we wanted to present to the users: they should still be able to trigger an analysis manually, but in addition to that whenever a file was changed or opened for the first time, it should run automatically, so that we could always present the most updated warnings to the user.
+However, each IDE has its own primitives and APIs to be called in order to integrate the functionalities we wanted. 
+It would have been time consuming and a maintenance nightmare to develop extensions for all the mostly used IDEs, until we learned about the Language Server Protocol\footnote{https://microsoft.github.io/language-server-protocol}: defining a common communication standard between the IDE and a decoupled Language Server, the protocol handles the heavy lifting of reducing all the IDEs to a common interface from the server point of view.
+This way we could integrate the analysis smarts in the Language Server, who could seamlessly deliver the warnings to the IDE, and fully concentrate on problems like incrementality and parallelism.
+\\\\
+After some initial experiments, we built a prototype of a VSCode extension which relies on the Language Server Protocol for all the communication between a Language Server and the IDE. The Language Server behaves as an orchestrator between two tools: the ECLAIR analyzer itself and \emph{eclair\textunderscore	report}, which serves the violations met.
+\\\\
+We believe that tools like this, which entails performing the analysis during the software development phase, can give an important boost to developers and allow them to conciliate speed and code quality assuring that bugs, inconsistencies, design issues and other quirks won't reach the production environment, but will be dealt with before.

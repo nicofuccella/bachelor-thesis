@@ -1,0 +1,24 @@
+\chapter{Verifying the Correctness of Programs}\label{chapter:verifying-the-correctness-of-programs}
+Today's dominant practice in the software industry is to demonstrate the correctness of programs empirically. Some inputs are fed to the tested program and the correctness of the output is verified against expected ones. In some cases exhaustive testing is possible, but in large software it generally is not. Just focusing on a single function, for example, with one 32-bit parameter it can possibly be exhaustively tested.  With more than one 32-bit parameters or one or more 64-bit parameters, exhaustive testing suddenly becomes impossible.
+
+However, the only thing we can actually prove with such an approach is that the program is incorrect: a single instance of incorrect behavior suffices to spot a problem. Unfortunately, when there is not an observation of incorrect behavior, we cannot know whether the program is correct or we have just not tested it with an input that would trigger an error.
+Some more sophisticated testing tries to choose the inputs so that all, or at least the majority of the possible execution paths are examined, and to test modules or units (testing in the small) as well as the overall software behavior (testing in the large). 
+\\\\
+Regardless of how sophisticated the testing is, empirical methods do not actually prove that a program is correct.
+Adopting a completely different approach, static analysis aims at giving more insights about some properties of the program without the need for the execution, but by examining the code.
+An analyzer scans all the code in a project, understands its structure and helps to check for vulnerabilities and ensure that it adheres to industry standards. 
+So static analysis is mostly useful when looking for:
+\begin{itemize}
+  \item security vulnerabilities;
+  \item programming errors;
+  \item coding standard or syntax violations;
+  \item performance issues.
+\end{itemize}
+
+Integrating static analysis in the development workflow improves code quality, thanks to automated tools which are less prone to human error, increase the likelihood of finding vulnerabilities and, paired with normal testing methods, allows for more depth into debugging code.
+
+However, static analysis comes with some drawbacks such as false positives and sometimes cryptic violation reports. In addition, enforcing too strict coding rules may slow down the development for little benefit.
+\\\\
+Nowadays static analysis is a mandatory step in high level software development, in particular for safety-critical systems and is often enforced by common regulations. Thus we have seen a proliferation of such tools, which are commonly paired with code review automations and continuous integration pipelines on platforms like GitHub\footnote{https://github.com} or Gitlab\footnote{https://gitlab.com}. These integrations perform the analysis after the code has been written or at least when it has reached a stable state (usually when changes are pushed to the repository or a pull request is opened). 
+Some of these tools are used also during the code writing to improve the quality and reduce the errors before shipping the changes and performing more in-depth checks. 
+This last use case opens a series of new requirements and problems: first of all, performing the analysis in the shortest amount of time becomes of the utmost importance, and while it is doable for short files, sometimes the codebases to consider can be huge and with a number of levels of abstractions. The analysis tooling, in order to be effective, must become a shared habit across the team, thus giving space to additional headaches: teams work on different platforms (Linux, MacOS, Windows, etc…) and with different IDEs/editors (Intellij Idea\footnote{https://www.jetbrains.com/idea}, VSCode\footnote{https://code.visualstudio.com} and Emacs\footnote{https://www.gnu.org/software/emacs} just to name a few). Acknowledging that, the static analysis tools must be compatible with each of them, with an increase in the number of softwares to be developed and maintained by the producers. 

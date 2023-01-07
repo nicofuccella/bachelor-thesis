@@ -1,0 +1,22 @@
+\chapter{Discussion and future work}\label{chapter:discussion-and-future-work}
+The work we did to implement this proof-of-concept gave us a taste of the benefit a tool of this kind can be to developers: after the first analysis was performed, we could navigate smoothly through the code and receive almost instant feedback about the violations that were detected. 
+The aim of this project was to determine whether this could be a feasible way to use ECLAIR analysis output and to lay the foundations of what can be a game changing tool for developers who develop safety-critical software.
+\\\\
+During the realization, we faced issues common to this kind of projects and found appropriate solutions: first the need for a common interface between the editors was solved using the LSP, then we relied on \emph{eclair\textunderscore	report} to answer the need for incrementality in the showing of the violations, then we achieved parallelism spawning multiple ECLAIR analysis from the Language Server when necessary and so on.
+\\\\
+We also had time to think about future improvements, that can make this piece of software production-ready and experiments to improve it: for example the pull diagnostics mechanism should be tested, and see if it actually could replace the current one, which pushes diagnostics from the server to the client. 
+
+This approach would allow the client to ask for violations only when it decides they are needed and not receive them passively from the server. 
+
+Another improvements on the side of the ECLAIR analyzer would be to reuse the previous analyses and re-analyze only what actually changed, without having to analyze the entire file. 
+While this is feasible for some kinds of violations, it can be challenging for others.
+
+At last, thanks to the decoupling granted by the Language Server Protocol, we can imagine scenarios in which the analysis is not even performed on the developer machine, but instead on a dedicated one that sends the results of the analysis through the protocol. 
+At the moment of this writing the transport channel can either be stdio, sockets, named pipes, or node ipc if both the client and server are written for Node.js. 
+\\\\
+The leitmotif of this thesis has been the simplicity: from the very beginning we had a clear view of the components, how we wanted them to interact and the precise level of isolation each level should have from the others that resulted in a simple and elegant implementation.
+
+One of the reasons behind this project was to assess whether the Language Server Protocol, an ever-growing standard, could actually make it possible to integrate an existing analysis tool into IDEs easily.
+We think that, after developing the reusable Language Server, the only 200 lines of code that were necessary to integrate it into VSCode have been our witnesses.
+\\\\
+This thesis describes the underlying ideas, the challenges and the solutions explored during the implementation of this prototype. We hope that the reader had the opportunity to learn new lessons, understand the potentiality of the new technologies we used and to better understand the evolutions of the static analysis ecosystem and its tooling.
